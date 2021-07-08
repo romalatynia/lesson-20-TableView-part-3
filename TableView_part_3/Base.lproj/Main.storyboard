@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIG-IA-Wrr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Rwo-wf-HsJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yIG-IA-Wrr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f75-yq-oWv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4MB-ZX-lux" kind="relationship" relationship="rootViewController" id="qj4-fj-Kr4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-ah-3fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+        <!--Directory View Controller-->
+        <scene sceneID="9b3-lB-Clh">
+            <objects>
+                <tableViewController id="4MB-ZX-lux" customClass="DirectoryViewController" customModule="TableView_part_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="DirectoryViewController" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8R3-jG-WGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="4MB-ZX-lux" id="hR6-i6-aF2"/>
+                            <outlet property="delegate" destination="4MB-ZX-lux" id="DwK-pU-g4F"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nUt-5h-iTG">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add Folder" id="Azl-pw-eKT">
+                                <connections>
+                                    <action selector="addFolder:" destination="4MB-ZX-lux" id="37W-ht-kOg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Hide" id="g3D-5b-03U">
+                                <connections>
+                                    <action selector="filesHiddenOrOpen:" destination="4MB-ZX-lux" id="KKQ-Si-8wL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Sort" id="V2z-Ku-A7e">
+                                <connections>
+                                    <action selector="sorted:" destination="4MB-ZX-lux" id="x3s-c4-Ucy"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7od-0f-kKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Item" id="i5a-vQ-e1H">
+                    <connections>
+                        <segue destination="4MB-ZX-lux" kind="show" identifier="Directory" id="rm4-hQ-3gz"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="1214.4927536231885" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
